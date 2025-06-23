@@ -64,10 +64,7 @@ export class ReviewController {
       console.log('Review session model created');
 
       // Add pre-save logging
-      reviewSession.schema.pre('save', function() {
-        console.log('🔄 Pre-save hook triggered for document:', this._id);
-      });
-
+    
       const savedSession = await reviewSession.save();
       console.log('✅ Successfully saved to MongoDB!');
       console.log('Saved document ID:', savedSession._id);
